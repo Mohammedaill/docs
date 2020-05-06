@@ -11,7 +11,7 @@ useCase: enable-mobile-auth
 ---
 # Auth0.swift Touch ID / Face ID Authentication
 
-Here's the scenario: After user authentication, you want to store the user's credentials and use them as long as they are valid. Once they expire, you would want to renew them using the `refreshToken` in order to avoid presenting the login page again. Rather than doing this automatically you require the user to validate with their fingerprint or face.
+Here's the scenario: After user authentication, you want to store the user's credentials and use them as long as they are valid. Once they expire, you would want to renew them using the `refreshToken` in order to avoid presenting the login page again. Rather than doing this automatically, you require the user to validate with their fingerprint or face.
 
 You will be using the [Credentials Manager](https://github.com/auth0/Auth0.swift/blob/master/Auth0/CredentialsManager.swift) utility in [Auth0.swift](https://github.com/auth0/Auth0.swift/) to streamline the management of user credentials and perform biometric authentication.
 
@@ -34,7 +34,7 @@ let credentialsManager = CredentialsManager(authentication: Auth0.authentication
 credentialsManager.enableBiometrics(withTitle: "Touch ID / Face ID Login")
 ```
 
-We also strongly recommend that you add the [NSFaceIDUsageDescription](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW75) setting to your project's `Info.plist` to display a reason for using Face ID. In some cases, if you do not provide a description string and the user attempts Face ID authentication, the user's attempt may fail.
+We strongly recommend that you add the [NSFaceIDUsageDescription](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW75) setting to your project's `Info.plist` to display a reason for using Face ID. In some cases, if you do not provide a description string and the user attempts Face ID authentication, the user's attempt may fail.
 
 ```xml
 ...
@@ -45,7 +45,7 @@ We also strongly recommend that you add the [NSFaceIDUsageDescription](https://d
 
 ### Login
 
-Present the Universal Login page and pass the credentials upon successful authentication to the Credentials Manager.
+Present the Universal Login page and, upon successful authentication, pass the credentials to the Credentials Manager.
 
 ```swift
 Auth0
