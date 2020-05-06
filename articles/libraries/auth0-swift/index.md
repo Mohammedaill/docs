@@ -35,7 +35,7 @@ If you are using [Cocoapods](https://cocoapods.org), add this line to your `Podf
 pod 'Auth0', '~> 1.24'
 ```
 
-Then, run `pod install`.
+Then run `pod install`.
 
 ::: note
 For more information on Cocoapods, check [their official documentation](https://guides.cocoapods.org/using/getting-started.html).
@@ -49,7 +49,7 @@ If you are using [Carthage](https://github.com/Carthage/Carthage), add the follo
 github "auth0/Auth0.swift" ~> 1.24
 ```
 
-Then, run `carthage bootstrap`.
+Then run `carthage bootstrap`.
 
 ::: note
 For more information about Carthage usage, check [their official documentation](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos).
@@ -106,7 +106,7 @@ If your `Info.plist` is not shown in this format, you can **Right Click** on `In
 Auth0.swift will only handle URLs with your Auth0 domain as host, for example `com.auth0.MyApp://samples.auth0.com/ios/com.auth0.MyApp/callback`
 :::
 
-Allow Auth0 to handle authentication callbacks. In your `AppDelegate.swift` add the following:
+Allow Auth0 to handle authentication callbacks. In your `AppDelegate.swift`, add the following:
 
 ##### iOS
 
@@ -195,7 +195,7 @@ Auth0
 
 ### Getting user information
 
-In order to retrieve a user's profile, you call the `userInfo` method and pass it the user's `accessToken`.  Although the call returns a [UserInfo](https://github.com/auth0/Auth0.swift/blob/master/Auth0/UserInfo.swift) instance, this is a basic OIDC conformant profile and the only guaranteed claim is the `sub` which contains the user's id, but depending on the requested scope the claims returned may vary.  You can also use the `sub` value to call the [Management API](https://auth0.com/docs/api/management/v2) and return a full user profile.
+In order to retrieve a user's profile, you call the `userInfo` method and pass it the user's `accessToken`.  Although the call returns a [UserInfo](https://github.com/auth0/Auth0.swift/blob/master/Auth0/UserInfo.swift) instance, this is a basic OIDC conformant profile and the only guaranteed claim is the `sub`, which contains the user's ID. Depending on the requested scope, the claims returned may vary.  You can also use the `sub` value to call the [Management API](https://auth0.com/docs/api/management/v2#!/Users/get_users_by_id) and return a full user profile.
 
 ```swift
 Auth0
